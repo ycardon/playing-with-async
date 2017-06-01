@@ -3,7 +3,7 @@ const request = require('request');
 
 function getPost() {
     request('http://jsonplaceholder.typicode.com/posts/1', (err, resp, body)=>{
-        if (!err) eventer.emit('received', body); else console.error(err)
+        if (!err) eventer.emit('body', body); else eventer.emit('error', err)
     })
 }
 
@@ -13,5 +13,6 @@ function printPost(post) {
         console.log('--- after ---')
 }
 
-eventer.on('received', post=>printPost(post))
+eventer.on('body', post=>printPost(post) )
+eventer.on('error', err=>console.error(err) )
 getPost()

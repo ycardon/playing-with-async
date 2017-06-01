@@ -1,8 +1,7 @@
 {
   "name": "playing-with-async",
   "version": "1.0.0",
-  "description": "Different implementations of asynchonous in node",
-  "main": "index.js",
+  "description": "Different styles of asynchronism in ES6 / node 8.x",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

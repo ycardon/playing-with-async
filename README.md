@@ -11,8 +11,12 @@ Different styles of asynchronism in ES6 / node 8.x
 7. async demonstrating the effect of delay
 8. ReactiveX
 
-## installation and run
+## installation and test
 
+```
 npm install
 node 1-callback.js
 node 2...
+```
+
+change test URL to get an error
