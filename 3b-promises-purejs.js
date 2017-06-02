@@ -8,8 +8,11 @@ function request(url) {
     })
 }
 
-function getPost() {
-     return request('http://jsonplaceholder.typicode.com/posts/1')
+const OK_URL = 'http://jsonplaceholder.typicode.com/posts/1'
+const KO_URL = 'http://localhost:9999'
+
+function getPost(url) {
+     return request(url)
 }
 
 function printPost(post) {
@@ -18,4 +21,5 @@ function printPost(post) {
     console.log('--- after ---')
 }
 
-getPost().then(printPost).catch( err=>console.error(err) )
+getPost(OK_URL).then(printPost).catch( err=>console.error(err) )
+getPost(KO_URL).then(printPost).catch( err=>console.error(err) )

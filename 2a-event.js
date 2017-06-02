@@ -1,8 +1,11 @@
 const eventer = new (require('events').EventEmitter)
 const request = require('request');
 
-function getPost() {
-    request('http://jsonplaceholder.typicode.com/posts/1', (err, resp, body)=>{
+const OK_URL = 'http://jsonplaceholder.typicode.com/posts/1'
+const KO_URL = 'http://localhost:9999'
+
+function getPost(url) {
+    request(url, (err, resp, body)=>{
         if (!err) eventer.emit('body', body); else eventer.emit('error', err)
     })
 }
@@ -15,4 +18,5 @@ function printPost(post) {
 
 eventer.on('body', post=>printPost(post) )
 eventer.on('error', err=>console.error(err) )
-getPost()
+getPost(OK_URL)
+getPost(KO_URL)

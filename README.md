@@ -2,21 +2,17 @@
 
 Different styles of asynchronism in ES6 / node 8.x
 
-1. simple callback
-2. callback with function passing
-3. even emitter
-4. promises
-5. hand coded promise
-6. async / await
-7. async demonstrating the effect of delay
-8. ReactiveX
+1. callbacks
+2. events
+3. promises
+4. async / await
+5. yield
+6. ReactiveX
 
 ## installation and test
 
 ```
 npm install
-node 1-callback.js
-node 2...
+node 1a-callback-naive.js
+node 1b...
 ```
-
-change test URL to get an error

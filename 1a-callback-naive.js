@@ -1,7 +1,10 @@
 const request = require('request');
 
-function getPost() {
-    request('http://jsonplaceholder.typicode.com/posts/1', (err, resp, body)=>{
+const OK_URL = 'http://jsonplaceholder.typicode.com/posts/1'
+const KO_URL = 'http://localhost:9999'
+
+function getPost(url) {
+    request(url, (err, resp, body)=>{
         if (!err) printPost(body); else console.error(err)
     })
 }
@@ -12,4 +15,5 @@ function printPost(post) {
     console.log('--- after ---')
 }
 
-getPost()
+getPost(OK_URL)
+getPost(KO_URL)
