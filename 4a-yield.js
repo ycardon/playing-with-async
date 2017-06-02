@@ -9,7 +9,7 @@ function getPost(url) {
     })
 }
 
-function *printPost(url, me) {
+function *printPost(url) {
     console.log('--- before ---')
     console.log(yield getPost(url))
     console.log('--- after ---')
